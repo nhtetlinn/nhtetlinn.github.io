@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <script src="style.css"></script>
+    <script>
+        $(function(){
+            $("#spouse").hide();
+
+            $('input[name=status]').change(function(){
+                if($(this).val()==1){
+                    $("#spouse").show();
+                }
+                else if ($(this).val()==0){
+                    $("#spouse").hide();
+                }
+            })
+
+            // submit from event 
+            $("#myform").on("submit", function(event){
+                event.preventDefault();
+
+            var username = $("#username").val();
+            var age = $("#age").val();
+            var status = $('input[name=status]:checked').val();
+                // console.log(status);
+
+                var data =""
+                if(status == 1){
+                    var spouse = $("#spouse").val();
+                    data += `${username} is ${age} years old and married.Spouse name is ${spouse}.`}
+                else{
+                    data += `${username} is ${age} years old and single.`
+                }
+                alert(data)
+                })
+
+            })
+    </script>
+</head>
+<body>
+    <form action="" id="myform">
+        <input type="text" name="username" id="username" placeholder="Name"><br><br>
+        <input type="number" name="age" id="age" placeholder="Age"><br><br>
+        <input type="radio" name="status" value="0" id="single" checked>
+        <label for="single">Single</label>
+        <input type="radio" name="status" value="1" id="married">
+        <label for="married">Married</label><br><br>
+        <input type="text" name="spouse" id="spouse" placeholder="Spouse"><br><br>
+        <input type="submit" value="save">
+    </form>
+</body>
+</html>

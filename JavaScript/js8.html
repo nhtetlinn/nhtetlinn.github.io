@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function funName(){
+            document.write('<h3>Hello Function</h3>');
+        }
+        funName();
+
+        function result(num1, num2){
+            let res = num1 + num2;
+            document.write(`<h3>${res}</h3>`)
+        }
+        result(23,24);
+
+        function subResult(num1 = 15, num2 = 10){
+            let sub_res = num1 - num2;
+            document.write(`<h3>${sub_res}</h3>`);
+        }
+        subResult(55,18);
+        subResult();
+
+        //Obiect
+        let laptop = {
+            name:'Apple',
+            type:'MacBook Pro',
+            price: 2300000
+        };
+        console.log(laptop.name);
+        console.log(laptop.type);
+        console.log(laptop['price']);
+    </script>
+</body>
+</html>
