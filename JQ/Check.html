@@ -10,8 +10,9 @@
         $(function(){
             $("#myform").on("submit", function(e){
                 e.preventDefault();
-                var name = $("$username").val()
+                var name = $("#username").val()
                 alert(name)
+                // console.log(name);
 
                 // var colors = ['red', 'green', 'blue'] //index array (numeric array)
                 // console.log(colors);
@@ -24,22 +25,22 @@
                 //     {name: 'koko', age: 25},
                 //     {name: 'mgmg', age: 24},
                 // ]
-                // array of Object 
-                // $.each(students,function(i,v){
-                //     console.log(`${i} - ${v.name}`);
+                // //array of Object
+                // $.each(student,function(i,v){
+                //     console.log(`${i} - ${v.name} ${v.age}`);
                 // })
 
-                var checkedElements = $('input[name="hobby"]:checked')
-                // console.log(checkedElements);
+                var checked = $('input[name="hobby"]:checked')
+                // console.log(checked);
 
                 var hobbies = [];
-                $.each(checkedElements,function(i,v){
+                $.each(checked,function(i,v){
                     hobbies.push($(this).val())
                 })
                 console.log(hobbies)
 
                 if(hobbies.length>1)
-                alert(`${name} 's' hobbies are : ${hobbies.join(",")}`)
+                alert(`${name}'s hobbies are : ${hobbies.join(",")}`)
                 else
                 alert(`${name}'s hobby is : ${hobbies[0]}`)
             })
@@ -50,13 +51,13 @@
     <form action="" method="get" id="myform">
 
         <input type="text" name="username" id="username" placeholder="Name"><br><br>
-        
+
         <label for="">Hobbies:</label><br><br>
 
-        <input type="checkbox" name="hobby" id="reading" value="Reading" checked="">
+        <input type="checkbox" name="hobby" id="reading" value="Reading" checked>
         <label for="reading">Reading</label>
 
-        <input type="checkbox" name="hobby" id="Music" value="Music">
+        <input type="checkbox" name="hobby" id="music" value="Music">
         <label for="Music">Music</label>
 
         <input type="checkbox" name="hobby" id="game" value="Game">

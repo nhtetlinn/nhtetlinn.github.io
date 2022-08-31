@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="jquery.min.js"></script>
-    <script src="style.css"></script>
     <script>
         $(function(){
             $("#spouse").hide();
@@ -21,7 +20,7 @@
             })
 
             // submit from event 
-            $("#myform").on("submit", function(event){
+            $("#myform").on('submit', function(event){
                 event.preventDefault();
 
             var username = $("#username").val();
