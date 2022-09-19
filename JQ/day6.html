@@ -20,6 +20,42 @@
                 $("#mylink").text('Go Facebook');
                 $("#username").val('Mg Mg');
             })
+
+            //AJAX
+            $.get('https://api.imgflip.com/get_memes',function(response){
+                //console.log(response)
+                if(response.success){
+                    //console.log(response.data.memes);
+                    var data = "";
+
+                    var memes = response.data.memes
+                    $.each(memes,function(i,v){
+                        data += `<img src="${v.url}" alt="" width="200" height="200">`
+                    })
+
+                    $("#memes").html(data)
+                    
+                }
+            })
+            // $.post('https://api.imgflip.com/caption_image',{
+            //     template_id: 181913649,
+            //     username: 'NHL16',
+            //     password:'25406880',
+            //     //text0: 'hello',
+            //     //text1: 'hi',
+            //     boxes:[
+            //         {
+            //             'text':"hello"
+            //         },
+            //         {
+            //             'text':"hi"
+            //         }
+            //     ]
+            // },function(response){
+            //     //console.log(response);
+            //     var data = `<img src="${response.data.url}" alt="">`
+            //     $("#memes").html(data)
+            // })
         })
     </script>
 </head>
@@ -28,5 +64,6 @@
 
     <input type="text" name="username" id="username">
     <button id="mybtn">Click</button>
+    <div style=" width: 200px; overflow-x: auto; white-space: normal; display: inline-block;" id="memes"></div>
 </body>
 </html>

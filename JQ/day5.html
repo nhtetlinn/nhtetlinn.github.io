@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 5</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("#hide").on("click",function(){
+                $("P").hide('slow');
+            })
+            $("#show").on("click",function(){
+                $("P").show('slow');
+            })
+            $("#toggle").on("click",function(){
+                $("P").toggle('slow');
+            })
+            $("#fadein").on("click",function(){
+                $("P").fadeIn('slow');
+            })
+            $("#fadeout").on("click",function(){
+                $("P").fadeOut('slow');
+            })
+            $("#fadeto").on("click",function(){
+                $("P").fadeTo('slow',0.6);
+            })
+            $("#animate").on("click",function(){
+                $("div").animate({left:'250px'});
+            })
+        })
+    </script>
+</head>
+<body>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+    <div style="background-color:red ;width: 100px; height: 100px; position: relative">
+
+    </div>
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <button id="toggle">Toggle</button>
+    <button id="fadein">Fadein</button>
+    <button id="fadeout">Fadeout</button>
+    <button id="fadetoggle">Fadetoggle</button>
+    <button id="fadeto">Fadeto</button>
+
+    <button id="animate">Animate</button>
+
+
+
+</body>
+</html>

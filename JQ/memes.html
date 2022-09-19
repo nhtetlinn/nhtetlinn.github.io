@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <script src="style.css"></script>
+    <script>
+        $(function(){
+            $.get('https://api.imgflip.com/get_memes',function(response){
+                //console.log(response)
+                if(response.success){
+                    //console.log(response.data.memes);
+                    var data = "";
+
+                    var memes = response.data.memes
+                    $.each(memes,function(i,v){
+                        data += `<img src="${v.url}" alt="" width="200" height="200" class="meme" data-boxcount="${v.box_count}" data-id="${v.id}" data-name="${v.name}" data-photo="${v.photo}">`
+                    })
+
+                    $("#memes").html(data)
+                    
+                }
+            })
+            $("#memes").on("click",".meme",function(){
+                var id = $(this).data("id")
+                var name = $(this).data("name")
+                var boxcount = $(this).data("boxcount")
+                var photo = $(this).attr('src');
+                console.log(name);
+            })
+        })
+    </script>
+</head>
+<body>
+<div style="border: 2px solid black; margin-left: 150px; width: 1200px; height: 600px; outline: 2px;">
+    <div style="margin-left: 100px; width: 1000px; overflow-x: auto; white-space: nowrap; display: block;" id="memes"></div>
+
+    
+
+</div>
+</body>
+</html>

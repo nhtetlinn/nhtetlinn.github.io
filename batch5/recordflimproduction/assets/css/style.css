@@ -1,0 +1,21 @@
+*{
+    font-family: 'SourceSanPro_Regular';
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: 'SourceSanPro_Bold';
+}
+
+.costom_bgcolor{
+    background-color: #0f172B;
+}
+
+.carousel-item img{
+    height: 70vh;
+    object-fit: cover;
+}
+
+#joinsection{
+    background: url('../img/joinbanner.png') no-repeat center center fixed;
+    background-size: cover;
+}
